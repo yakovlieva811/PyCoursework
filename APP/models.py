@@ -4,13 +4,10 @@ from django.db import models
 from django.db import models
 
 
-class Employee(models.Model):
-    EmpId = models.CharField(max_length=3)
-    EmpName = models.CharField(max_length=200)
-    EmpGender = models.CharField(max_length=10)
-    EmpEmail = models.EmailField()
-    EmpDesignation = models.CharField(max_length=150)
+class School(models.Model):
+    SchoolId = models.CharField(max_length=4)
+    SchoolName = models.CharField(max_length=300)
+    SchoolAddress = models.CharField(max_length=300)
 
     class Meta:
-        db_table = "Employee"
-
+        db_table = "PySchools"

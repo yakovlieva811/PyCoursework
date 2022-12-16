@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Employee</title>
+    <title>Search School</title>
 </head>
 <style>
     table {
@@ -25,32 +25,28 @@
 </style>
 
 <body>
-    <h2 style="text-align:center"> Employee Information </h2>
+    <h2 style="text-align:center"> School Information </h2>
     <table align="center" style="margin: 0px auto;">
         <thead>
             <tr>
-                <th>Employee ID</th>
+                <th>School ID</th>
                 <th>Name</th>
-                <th>Gender</th>
-                <th>Email</th>
-                <th>Designation</th>
+                <th>Address</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
         </thead>
         <tbody>
-            {% for employee in employees %}
+            {% for school in schools %}
             <tr>
-                <td>{{employee.EmpId}}</td>
-                <td>{{employee.EmpName}}</td>
-                <td>{{employee.EmpGender}}</td>
-                <td>{{employee.EmpEmail}}</td>
-                <td>{{employee.EmpDesignation}}</td>
+                <td>{{school.SchoolId}}</td>
+                <td>{{school.SchoolName}}</td>
+                <td>{{school.SchoolAddress}}</td>
                 <td>
-                    <a href="/edit/{{employee.pk}}">Update</a>
+                    <a href="/edit/{{school.pk}}">Update</a>
                 </td>
                 <td>
-                    <a href="/remove/{{employee.pk}}">Delete</a>
+                    <a href="/remove/{{school.pk}}">Delete</a>
                 </td>
             </tr>
             {% endfor %}
@@ -59,11 +55,11 @@
 
     <br><br>
     <div class="alert alert-danger" role="alert">
-        Do you want to enter more Employees?
+        Do you want to enter more Schools?
     </div>
 
     <p>
-        <a href="{% url 'insert-emp' %}"><-- Go To Home Page</a>
+        <a href="{% url 'insert-sho' %}"><-- Go To Home Page</a>
     </p>
 </body>
 

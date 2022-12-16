@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enter Employee</title>
+    <title>Enter School</title>
 </head>
 <style>
     table {
@@ -24,40 +24,21 @@
 </style>
 
 <body>
-    <h2 style="text-align:center"> Enter Details of Employee </h2>
+    <h2 style="text-align:center"> Enter Details of School </h2>
     <form method="POST">
         {% csrf_token %}
         <table style="width:50%" align="center">
             <tr>
-                <td>Employee Id</td>
-                <td><input type="text" placeholder="Enter Employee Id" name="EmpId" </td>
+                <td>school Id</td>
+                <td><input type="text" placeholder="Enter School Id" name="SchoolId"> </td>
             </tr>
             <tr>
-                <td>Employee Name</td>
-                <td><input type="text" placeholder="Enter Employee Name" name="EmpName" </td>
+                <td>school Name</td>
+                <td><input type="text" placeholder="Enter School Name" name="SchoolName"> </td>
             </tr>
-            <tr>
-                <td>Gender</td>
-                <td><input type="radio" name="EmpGender" value="Male"> Male
-                    <input type="radio" name="EmpGender" value="Female"> Female
-                    <input type="radio" name="EmpGender" value="Other"> Other
-                </td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td><input type="email" placeholder="Enter Employee Email" name="EmpEmail" </td>
-            </tr>
-            <tr>
-                <td>Designation</td>
-                <td><select name="EmpDesignation">
-                        <option selected disabled=true>Select Designation</option>
-                        <option> Project Manager </option>
-                        <option> Programmer </option>
-                        <option> Desktop Support Technician </option>
-                        <option> Web Developer </option>
-                        <option> Financial Advisor </option>
-                        </option>
-                    </select></td>
+           <tr>
+                <td>Address Name</td>
+                <td><input type="text" placeholder="Enter School Address" name="SchoolAddress"> </td>
             </tr>
             <tr>
                 <td colspan="2" align="center"><input type="submit" class="btn btn-success"> </td>
@@ -66,11 +47,11 @@
 
         <br><br>
         <div class="alert alert-danger" role="alert">
-            Do you want see Information of Employees?
+            Do you want see Information of School?
         </div>
 
         <p>
-            <a href="{% url 'show-emp' %}">Go To Employee Information--></a>
+            <a href="{% url 'show-sho' %}">Go To School Information--></a>
         </p>
     </form>
 </body>

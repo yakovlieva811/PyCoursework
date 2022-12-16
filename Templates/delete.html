@@ -9,22 +9,22 @@
 </head>
 
 <body>
-    <form action="" method="POST">
-        {% csrf_token %}
+<form action="" method="POST">
+    {% csrf_token %}
 
-        <br><br>
-        <div class="alert alert-danger" role="alert">
-            Are you sure you want to delete "{{ employees.EmpName}}"?
-        </div>
+    <br><br>
+    <div class="alert alert-danger" role="alert">
+        Are you sure you want to delete "{{ schools.SchoolName}}"?
+    </div>
 
-        <p>
-            <a href="{% url 'show-emp' %}"><-- Return</a>
-        </p>
+    <p>
+        <a href="{% url 'show-sho' %}"><-- Return</a>
+    </p>
 
-        <p>
-            <input class="btn btn-danger" type="submit" value="Confirm">
-        </p>
-    </form>
+    <p>
+        <input class="btn btn-danger" type="submit" value="Confirm">
+    </p>
+</form>
 </body>
 
 </html>

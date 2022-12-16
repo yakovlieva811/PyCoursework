@@ -1,22 +1,18 @@
 from django.shortcuts import render, redirect
-from APP.models import Employee
+from APP.models import School
 
 
+# Create School
 
-# Create Employee
-
-def insert_emp(request):
+def insert_sho(request):
     if request.method == "POST":
-        EmpId = request.POST['EmpId']
-        EmpName = request.POST['EmpName']
-        EmpGender = request.POST['EmpGender']
-        EmpEmail = request.POST['EmpEmail']
-        EmpDesignation = request.POST['EmpDesignation']
-        data = Employee(EmpId=EmpId,
-                        EmpName=EmpName,
-                        EmpGender=EmpGender,
-                        EmpEmail=EmpEmail,
-                        EmpDesignation=EmpDesignation)
+        SchoolId = request.POST['SchoolId']
+        SchoolName = request.POST['SchoolName']
+        SchoolAddress = request.POST['SchoolAddress']
+
+        data = School(SchoolId=SchoolId,
+                      SchoolName=SchoolName,
+                      SchoolAddress=SchoolAddress)
         data.save()
 
         return redirect('show/')
@@ -24,41 +20,38 @@ def insert_emp(request):
         return render(request, 'insert.html')
 
 
+# Retrive School
 
-# Retrive Employee
-
-def show_emp(request):
-    employees = Employee.objects.all()
-    return render(request, 'show.html', {'employees': employees})
-
+def show_sho(request):
+    schools = School.objects.all()
+    return render(request, 'show.html', {'schools': schools})
 
 
-# Update Employee
+# Update School
 
-def edit_emp(request,pk):
-    employees = Employee.objects.get(id=pk)
+def edit_sho(request, pk):
+    schools = School.objects.get(id=pk)
     if request.method == 'POST':
         return redirect('/show')
 
     context = {
-        'employees': employees,
+        'schools': schools,
     }
 
-    return render(request,'edit.html',context)
+    return render(request, 'edit.html', context)
 
 
+# Delete School
 
-# Delete Employee
-
-def remove_emp(request, pk):
-    employees = Employee.objects.get(id=pk)
+def remove_sho(request, pk):
+    schools = School.objects.get(id=pk)
 
     if request.method == 'POST':
-        employees.delete()
+        schools.delete()
         return redirect('/show')
 
     context = {
-        'employees': employees,
+        'schools': schools,
     }
 
     return render(request, 'delete.html', context)
